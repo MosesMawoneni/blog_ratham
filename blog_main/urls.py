@@ -25,8 +25,11 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.home, name="home"),
     path("category/", include("blogs.urls")),
-    path("<slug:slug>/", blog_views.blogs, name="blogs"),
-    path("blogs/search/", blog_views.search, name="search"),
+    path("blogs/<slug:slug>/", blog_views.blogs, name="blogs"),
+    path("posts/search/", blog_views.search, name="search"),
+    path("register/", views.register, name="register"),
+    path("login/", views.login, name="login"),
+    path("logout/", views.logout, name="logout"),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

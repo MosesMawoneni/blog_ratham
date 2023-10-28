@@ -1,15 +1,14 @@
-{% extends 'base.html'%}
+{%extends 'base.html'%}
 {%block content%}
-<!--Feautured post-->
-<h3 class="text-uppercase text-warning" style="letter-spacing:2px;">Category - {{category}}</h3>
+<h3 class="text-warning" style="letter-spacing:2px;">Search Term - {{keyword}}</h3>
 <div class="row mb-2">
-    {% if posts%}
-    {% for post in posts%}
+    {% if blogs%}
+    {% for post in blogs%}
     
     <div class="col-md-6">
       <div class="card border-0" >
         <div class="card-body">
-          <h3><a href="{% url 'blogs' post.slug%}">
+          <h3><a href="{% url 'blogs' post.slug%}" class="text-dark">
 
             {{post.title}}
           </a>
@@ -27,19 +26,4 @@
     {%endif%}
   </div>
 
-  {%endblock content%}
-
-
-      
-
-
-    </div><!-- /.row -->
-
-  </main><!-- /.container -->
-
-</div>
-<footer class="blog-footer">
-  <p>Django blog built with � by <a href="#">Rathan Kumar</a></p>
-</footer>
-</body>
-</html>
+{%endblock%}

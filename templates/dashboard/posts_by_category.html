@@ -1,6 +1,7 @@
 {% extends 'base.html'%}
 {%block content%}
 <!--Feautured post-->
+{% if perms.auth.view_category%}
 <h3 class="text-uppercase text-warning" style="letter-spacing:2px;">Category - {{category}}</h3>
 <div class="row mb-2">
     {% if posts%}
@@ -38,8 +39,9 @@
   </main><!-- /.container -->
 
 </div>
+{%endif%}
 <footer class="blog-footer">
-  <p>Django blog built with � by <a href="#">Rathan Kumar</a></p>
+  <p>Django blog built with � by <a href="#">Moses Mawoneni</a></p>
 </footer>
 </body>
 </html>

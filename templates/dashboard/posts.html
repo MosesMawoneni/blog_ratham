@@ -6,7 +6,9 @@
 <div class="row">
     {% include 'dashboard/sidebar.html'%}
     <div class="col-md-9">
+      {% if perms.auth.view_post %}
         <h2>All Posts</h2>
+
         <a href="{% url 'add_post'%}" class="btn btn-dark text-light float-right mb-2 ">Add New</a>
 <table class="table table-hover">
   <thead>
@@ -47,6 +49,7 @@
     
   </tbody>
 </table>
+{%endif%}
     </div>
 
 </div>
